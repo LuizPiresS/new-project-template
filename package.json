@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:staged": "jest",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -28,6 +29,9 @@
     "typescript": "^4.3.5"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.ts": [
+      "eslint --cache --fix",
+      "npm run test:staged"
+    ]
   }
 }
