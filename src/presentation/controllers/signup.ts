@@ -15,6 +15,10 @@ export class SignUpController {
       return badRequest(new MissingParamError('password'))
     }
 
+    if (!httpRequest.body?.passwordConfirmation) {
+      return badRequest(new MissingParamError('passwordConfirmation'))
+    }
+
     return {
       statusCode: 200,
       body: { message: 'dados do usuário' }
