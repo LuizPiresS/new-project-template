@@ -11,6 +11,10 @@ export class SignUpController {
       return badRequest(new MissingParamError('email'))
     }
 
+    if (!httpRequest.body?.password) {
+      return badRequest(new MissingParamError('password'))
+    }
+
     return {
       statusCode: 200,
       body: { message: 'dados do usuário' }
